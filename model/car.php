@@ -20,6 +20,7 @@ class Car {
 
     public static function getAllCars(){
         $result = executeQuery("SELECT * FROM tb_cars");
+        return $result;
     }
 
     public function getCar(){
