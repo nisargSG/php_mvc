@@ -1,12 +1,19 @@
 <?php
 $db_host = "localhost";
-$db_username = "username";
-$db_password = "password";
-$db_name = "database_name";
+$db_username = "root";
+$db_password = "";
+$db_name = "06jan";
 
 
 
 function executeQuery($sql){
+
+    global $db_host;
+    global $db_username;
+    global $db_password;
+    global $db_name;
+
+
     $db = new mysqli($db_host, $db_username, $db_password, $db_name);
 
     if ($db->connect_error) {
