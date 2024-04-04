@@ -1,0 +1,39 @@
+<html>
+
+<body>
+
+    <h1>This is Users list</h1>
+
+    <ul id="LIST">
+
+    </ul>
+
+    <button onclick="fetchData()">Click Me</button>
+
+    <script>
+
+        function fetchData() {
+
+            fetch("http://localhost/php_mvc/controller/user.php")
+                .then((rawData) => rawData.json())
+                .then((jsonData) => {
+
+                    console.log(jsonData)
+
+                    const ulTag = document.getElementById("LIST");
+
+
+
+                    ulTag.innerHTML = JSON.stringify(jsonData)
+
+                })
+
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

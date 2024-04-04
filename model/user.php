@@ -1,6 +1,6 @@
 <?php
 
-class User{
+class User implements JsonSerializable{
 
     private $id,$name,$email,$password,$isAdmin;
 
@@ -32,6 +32,15 @@ class User{
 
     public function getIsAdmin(){
         return $this->isAdmin;
+    }
+
+    public function jsonSerialize() {
+        return [
+            'id' => $this->id,
+            'name' => $this->name,
+            'email' => $this->email,
+            'is_admin' => $this->is_admin
+        ];
     }
 
 

@@ -13,11 +13,12 @@ $userArray=array();
 //convert rows into object
 while($row=$userData->fetch_assoc()){
     //push objects to array
-    array_push($userArray,new User($row["id"],$row["name"],$row["email"],$row["password"],$row["is_admin"]));
+    array_push($userArray,new User($row["id"],$row["name"],$row["email"],$row["password"],$row["is_admin"]==1?true:false));
 
 }
 
+$jsonData = json_encode($userArray, JSON_PRETTY_PRINT);
 
-require("../view/user.php");
+echo $jsonData;
 
 ?>
