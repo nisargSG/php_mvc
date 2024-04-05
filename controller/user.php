@@ -3,7 +3,6 @@
 require_once("../utils/db.php");
 require_once("../model/user.php");
 
-
 //get rows
 $userData=executeQuery("SELECT * FROM user");
 
