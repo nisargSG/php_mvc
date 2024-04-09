@@ -28,8 +28,6 @@
                                     ${item.name}
                                 </div>
                             </div>`
-
-                   
                 })
 
                 console.log(cards.join(""))
